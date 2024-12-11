@@ -1,0 +1,246 @@
+.serie {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.contenedor {
+    display: flex;
+    margin-top: 109px;
+    width: 100%;
+    max-width: 800px;
+    height: 420px;
+    flex-direction: row;
+    border-radius: 40px; /* Ajusta el valor según el redondeo que desees */
+    overflow: hidden; /* Opcional: evita que el contenido sobresalga */
+}
+.hidden {
+    display: none;
+}
+.login {
+    order: 1;
+    width: 300px;
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 20px;
+}
+
+.serie .header h1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #014670;
+    font-size: 35px;
+}
+
+.serie form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los inputs y botones */
+}
+
+.serie form div {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.serie label {
+    display: block;
+    margin-bottom: 5px;
+    color: #014670;
+    font-size: 14px;
+    text-align: left; /* Alinea el texto del label a la izquierda */
+}
+
+.serie input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #014670;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.serie input:hover {
+    box-shadow: 0 0 5px rgba(1, 70, 112, 0.5);
+}
+
+.serie button {
+    width: 80%;
+    height: 35px;
+    margin: 10px 0;
+    padding-left: 8px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #014670;
+    color: #014670;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.serie button:hover {
+    box-shadow: 3px 3px 3px rgba(1, 70, 112, 0.5);
+}
+
+.main a {
+    display: block;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+    color: #014670;
+    text-decoration: none;
+}
+
+.main a:hover {
+    text-decoration: underline;
+}
+
+.img {
+    display: flex;
+    order: 2;
+    flex-grow: 2;
+    background-image: url('https://www.creativasesores.com/images/easyblog_articles/112/b2ap3_amp_situaciones-evitar-asesoria-contable.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+}
+
+.img span {
+    margin: auto;
+}
+
+.img span h1 {
+    font-size: 50px;
+    text-shadow: 0 0 10px #014670;
+}
+
+.img span p {
+    font-size: 15px;
+}
+
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .login {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .img span h1 {
+        font-size: 35px;
+    }
+
+    .img span p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .img {
+        display: none;
+    }
+
+    .img span h1 {
+        display: none; /* Oculta el texto h1 en la imagen */
+    }
+
+    .img span p {
+        display: none; /* Oculta el párrafo en la imagen */
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    height: 100px; /* Establecer altura fija para las tarjetas */
+    width: 600px;
+}
+
+.card-img-top {
+    height: 140px; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    justify-content: space-between; /* Espacio entre el título y el botón */
+    height: 100%; /* Asegura que el contenido esté centrado */
+}
+
+/* Ajustar el margen en las columnas */
+.col-md-3 {
+    padding: 10px; /* Espacio alrededor de cada tarjeta */
+}
+
+
+.modal-content {
+    border-radius: 8px; /* Bordes redondeados para el modal */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.cardt {
+    margin-bottom: 00px; /* Espacio entre tarjetas */
+    height: 420px; /* Establecer altura fija para las tarjetas */
+    display: flex; /* Utilizar flexbox para alinear el contenido */
+    flex-direction: column; /* Alinear el contenido en columna */
+    justify-content: space-between; /* Espacio entre los elementos */
+    
+}
+.modal-dialog {
+    max-width: 800px; /* Ancho máximo del modal */
+}
+.card-body {
+    flex-grow: 1; /* Hacer que el cuerpo de la tarjeta ocupe el espacio disponible */
+}
+@media screen and (max-width: 768px) {
+    .modal-content {
+        padding: 15px;
+    }
+    .cardt{
+        height: 710px;
+    }
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-body p {
+        font-size: 0.9rem; /* Tamaño de texto más pequeño en pantallas pequeñas */
+    }
+
+    .modal-header {
+        padding: 10px; /* Ajusta el padding en la cabecera para pantallas pequeñas */
+    }
+
+    .close {
+        font-size: 1rem; /* Ajusta el tamaño del botón de cierre */
+    }
+}
