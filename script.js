@@ -410,7 +410,14 @@ document.getElementById("registroVentas").addEventListener("submit", function (e
     // Limpiar formulario
     document.getElementById("registroVentas").reset();
 });
-
+document.getElementById('limpiarFormulario').addEventListener('click', function() {
+    // Limpia todos los campos del formulario
+    document.getElementById('registroCompras').reset();
+});
+document.getElementById('limpiarFormulario1').addEventListener('click', function() {
+    // Limpia todos los campos del formulario
+    document.getElementById('registroVentas').reset();
+});
 
 /*
 document.getElementById('excelFile').addEventListener('change', function (e) {
