@@ -104,7 +104,7 @@
     text-decoration: underline;
 }
 
-.hero{
+.hero1{
     background-image: linear-gradient(120deg, rgba(66, 55, 231, 0.699) 0%, rgba(88, 23, 32, 0.692) 100%), url("header.jpg");
 }
 .img {
@@ -221,6 +221,18 @@
     flex-grow: 1; /* Hacer que el cuerpo de la tarjeta ocupe el espacio disponible */
 }
 @media screen and (max-width: 768px) {
+    #vista {
+        background-color: #15295f; /* Color de fondo */
+        color: white; /* Color del texto */
+    }
+    #vista .titulo.left {
+        text-align: left; /* Alineación a la izquierda */
+    }
+    
+    #vista .info p {
+        text-align: left; /* Alineación a la izquierda */
+    }
+    
     .modal-content {
         padding: 15px;
     }
@@ -245,5 +257,73 @@
 
     .close {
         font-size: 1rem; /* Ajusta el tamaño del botón de cierre */
+    }
+}
+
+
+
+
+
+/* Estilo base */
+.content-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card1 {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card1 i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card1 h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card1 p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card1 .cta {
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Estilo responsivo */
+@media (max-width: 1024px) {
+    .card1 {
+        width: 45%; /* En pantallas más pequeñas, se muestran dos tarjetas por fila */
+    }
+}
+
+@media (max-width: 768px) {
+    .card1 {
+        width: 90%; /* En pantallas móviles, las tarjetas ocupan casi toda la pantalla */
+    }
+    
+    h2 {
+        font-size: 28px; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+    
+    .content-cards {
+        padding: 0 10px; /* Reducir el margen de los lados en pantallas móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px; /* Reducir aún más el tamaño del título en pantallas muy pequeñas */
     }
 }
