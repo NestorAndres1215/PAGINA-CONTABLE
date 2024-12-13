@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -92,7 +93,7 @@
                 <ul class="nav-menu">
                     <button id="menu-close-button" class="fas fa-times"></button>
                     <li class="nav-item">
-                        <a href="data.html" class="nav-link">INICIO</a>
+                        <a id="showInicioBtn" class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item">
                         <a id="showComprasBtn" class="nav-link">COMPRAS</a>
@@ -105,7 +106,48 @@
                 <button id="menu-open-button" class="fas fa-bars"></button>
             </nav>
         </header>
+
+
     </div>
+
+
+    <div id="vista" class=" hidden ">
+        <header class="hero" style="  width: 100%;
+        height: 650px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        overflow: hidden;">
+            <div style="  height: 500px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;">
+                <h1 style="font-size: 60px;">Bienvenido a Website</h1>
+                <p style="font-size: 25px;
+    margin-bottom: 20px;">Creamos el mejor sitio web para ti</p>
+                <a href="#contacto" style="    display: inline-block;
+                text-decoration: none;
+                padding: 12px 15px;
+                background: #a18cd1;
+                border-radius: 8px;
+                color: #fff;">Contactame</a>
+            </div>
+            <div class="svg-hero" style="height: 150px; overflow: hidden; position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill: #fff;"></path>
+                </svg></div>
+        </header>
+
+
+    </div>
+
     <div id="form-container-compras" class="hidden">
         <div class="container">
             <div class="form-container">
@@ -124,14 +166,23 @@
                                 <!-- Número de la compra -->
                                 <div class="col-md-4">
                                     <label for="numero" class="form-label">Número:</label>
-                                    <input type="text" class="form-control" id="numero" name="numero" required>
+                                    <input type="text" class="form-control" id="numero" name="numero" required
+                                        maxlength="6" pattern="\d{6}"
+                                        title="El número debe contener exactamente 6 dígitos numéricos"
+                                        inputmode="numeric"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)">
                                 </div>
+
 
                                 <!-- RUC -->
                                 <div class="col-md-4">
                                     <label for="ruc" class="form-label">RUC:</label>
-                                    <input type="text" class="form-control" id="ruc" name="ruc" required>
+                                    <input type="text" class="form-control" id="ruc" name="ruc" required maxlength="11"
+                                        pattern="\d{11}" title="El RUC debe contener exactamente 11 dígitos numéricos"
+                                        inputmode="numeric"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)">
                                 </div>
+
 
                                 <!-- Nombre del responsable -->
                                 <div class="col-md-4">
@@ -160,8 +211,10 @@
                                 <!-- Cantidad -->
                                 <div class="col-md-4">
                                     <label for="cantidad" class="form-label">Cantidad:</label>
-                                    <input type="number" class="form-control" id="cantidad" name="cantidad" required>
+                                    <input type="number" class="form-control" id="cantidad" name="cantidad" required
+                                        step="1" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                 </div>
+
                                 <!-- Incluir IGV -->
                                 <div class="col-md-4">
                                     <label for="igv" class="form-label">Incluir IGV:</label>
@@ -191,25 +244,25 @@
             <!-- Formulario -->
             <div class="table-container">
                 <h2 class="text-center">Datos Registrados</h2>
-        
-                <!-- Botones para descargar PDF y Excel -->
+
                 <div class="d-flex justify-content-end mb-3 flex-wrap">
-                    <label for="excelFile" class="btn btn-info me-2">
+
+                    <!-- Botones para descargar PDF y Excel               <label for="excelFile" class="btn btn-info me-2">
                         <i class="fas fa-upload"></i> Cargar Excel
                     </label>
                     <input type="file" id="excelFile" class="form-control d-none" style="width: auto;" />
-        
-                    <button id="downloadPdf" class="btn btn-danger me-2">
+-->
+                    <button id="downloadPdf" class="btn btn-danger mx-2">
                         <i class="fas fa-file-pdf"></i>
                     </button>
-                    <button id="downloadExcel" class="btn btn-success me-2">
+                    <button id="downloadExcel" class="btn btn-success mx-2">
                         <i class="fas fa-file-excel"></i>
                     </button>
-                    <button id="printButton" class="btn btn-primary">
+                    <button id="printButton" class="btn btn-primary mx-2">
                         <i class="fas fa-print"></i>
                     </button>
                 </div>
-        
+
                 <div class="table-responsive">
                     <table class="table table-bordered table-primary">
                         <thead>
@@ -233,8 +286,8 @@
                 </div>
             </div>
         </div>
-        
-<br><br><br>
+
+        <br><br><br>
         <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="countryModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -253,21 +306,166 @@
 
     <!-- Formulario de Ventas -->
     <div id="form-container-ventas" class="hidden">
-        <h3>Formulario de Registro de Ventas</h3>
-        <!-- Aquí va tu formulario de ventas -->
+        <div class="container">
+            <div class="form-container">
+                <form id="registroVentas">
+                    <div class="container mt-5">
+                        <h2>Formulario de Registro de Ventas</h2>
+                        <form id="registroVentas">
+                            <div class="row g-3">
+                                <!-- Fecha de Emisión -->
+                                <div class="col-md-4">
+                                    <label for="fechaEmisionVentas" class="form-label">Fecha de Emisión:</label>
+                                    <input type="date" class="form-control" id="fechaEmisionVentas" name="fechaEmisionVentas" required>
+                                </div>
+    
+                                <!-- Número de la venta -->
+                                <div class="col-md-4">
+                                    <label for="numeroVentas" class="form-label">Número:</label>
+                                    <input type="text" class="form-control" id="numeroVentas" name="numeroVentas" required maxlength="6"
+                                        pattern="\d{6}" title="El número debe contener exactamente 6 dígitos numéricos"
+                                        inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)">
+                                </div>
+    
+                                <!-- RUC -->
+                                <div class="col-md-4">
+                                    <label for="rucVentas" class="form-label">RUC:</label>
+                                    <input type="text" class="form-control" id="rucVentas" name="rucVentas" required maxlength="11"
+                                        pattern="\d{11}" title="El RUC debe contener exactamente 11 dígitos numéricos"
+                                        inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)">
+                                </div>
+    
+                                <!-- Nombre del responsable -->
+                                <div class="col-md-4">
+                                    <label for="nombreVentas" class="form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombreVentas" name="nombreVentas" required>
+                                </div>
+    
+                                <!-- Proveedor -->
+                                <div class="col-md-4">
+                                    <label for="proveedorVentas" class="form-label">Proveedor:</label>
+                                    <input type="text" class="form-control" id="proveedorVentas" name="proveedorVentas" required>
+                                </div>
+    
+                                <!-- Producto -->
+                                <div class="col-md-4">
+                                    <label for="productoVentas" class="form-label">Producto:</label>
+                                    <input type="text" class="form-control" id="productoVentas" name="productoVentas" required>
+                                </div>
+    
+                                <!-- Precio -->
+                                <div class="col-md-4">
+                                    <label for="precioVentas" class="form-label">Precio Unitario:</label>
+                                    <input type="number" class="form-control" id="precioVentas" name="precioVentas" required>
+                                </div>
+    
+                                <!-- Cantidad -->
+                                <div class="col-md-4">
+                                    <label for="cantidadVentas" class="form-label">Cantidad:</label>
+                                    <input type="number" class="form-control" id="cantidadVentas" name="cantidadVentas" required
+                                        step="1" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                </div>
+    
+                                <!-- Incluir IGV -->
+                                <div class="col-md-4">
+                                    <label for="igvVentas" class="form-label">Incluir IGV:</label>
+                                    <select class="form-control" id="igvVentas" name="igvVentas" required>
+                                        <option value="no">No</option>
+                                        <option value="si">Sí</option>
+                                    </select>
+                                </div>
+    
+                                <!-- Botón para enviar -->
+                            </div><br><br>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </form>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="container">
+            <!-- Formulario -->
+            <div class="table-container">
+                <h2 class="text-center">Datos Registrados</h2>
+    
+                <div class="d-flex justify-content-end mb-3 flex-wrap">
+    
+                    <button id="downloadPdf1" class="btn btn-danger mx-2">
+                        <i class="fas fa-file-pdf"></i>
+                    </button>
+                    <button id="downloadExcel1" class="btn btn-success mx-2">
+                        <i class="fas fa-file-excel"></i>
+                    </button>
+                    <button id="printButton1" class="btn btn-primary mx-2">
+                        <i class="fas fa-print"></i>
+                    </button>
+                </div>
+    
+                <div class="table-responsive">
+                    <table class="table table-bordered table-primary">
+                        <thead>
+                            <tr>
+                                <th>Fecha Emisión</th>
+                                <th>Número</th>
+                                <th>RUC</th>
+                                <th>Nombre</th>
+                                <th>Proveedor</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableVentas">
+                            <!-- Aquí se insertarán las filas dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+        <br><br><br>
+        <div class="modal fade" id="detailModalVentas" tabindex="-1" role="dialog" aria-labelledby="countryModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="card">
+                    <div class="modal-content">
+    
+                        <div class="modal-body">
+                            <div id="modalContentVentas"></div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
 
 
 
     <script>
+        document.getElementById('showInicioBtn').addEventListener('click', function () {
+            document.getElementById('form-container-compras').classList.add('hidden');
+            document.getElementById('vista').classList.remove('hidden')
+            document.getElementById('form-container-ventas').classList.add('hidden');
+            // Si quieres ocultar otros elementos como tablas o formularios previos, puedes hacerlo aquí
+        });
+
         document.getElementById('showComprasBtn').addEventListener('click', function () {
             document.getElementById('form-container-compras').classList.remove('hidden');
+            document.getElementById('vista').classList.add('hidden')
             document.getElementById('form-container-ventas').classList.add('hidden');
             // Si quieres ocultar otros elementos como tablas o formularios previos, puedes hacerlo aquí
         });
 
         document.getElementById('showVentasBtn').addEventListener('click', function () {
             document.getElementById('form-container-ventas').classList.remove('hidden');
+            document.getElementById('vista').classList.add('hidden')
             document.getElementById('form-container-compras').classList.add('hidden');
             // Si quieres ocultar otros elementos como tablas o formularios previos, puedes hacerlo aquí
         });
